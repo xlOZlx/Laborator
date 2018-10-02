@@ -1,0 +1,9 @@
+E:\2 курс\C#\Lb-2\Lb-2\obj\Debug\Lb-2.csproj.CoreCompileInputs.cache
+E:\2 курс\C#\Lb-2\Lb-2\bin\Debug\Lb-2.exe.config
+E:\2 курс\C#\Lb-2\Lb-2\bin\Debug\Lb-2.exe
+E:\2 курс\C#\Lb-2\Lb-2\bin\Debug\Lb-2.pdb
+E:\2 курс\C#\Lb-2\Lb-2\obj\Debug\Lb-2.exe
+E:\2 курс\C#\Lb-2\Lb-2\obj\Debug\Lb-2.pdb
+E:\2 курс\C#\Lb-2\Lb-2\bin\Debug\System.ValueTuple.dll
+E:\2 курс\C#\Lb-2\Lb-2\bin\Debug\System.ValueTuple.xml
+E:\2 курс\C#\Lb-2\Lb-2\obj\Debug\Lb-2.csprojResolveAssemblyReference.cache
