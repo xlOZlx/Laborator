@@ -1,0 +1,7 @@
+E:\2 курс\C#\Lr-4\Lr-4\bin\Debug\Lr-4.exe.config
+E:\2 курс\C#\Lr-4\Lr-4\bin\Debug\Lr-4.exe
+E:\2 курс\C#\Lr-4\Lr-4\bin\Debug\Lr-4.pdb
+E:\2 курс\C#\Lr-4\Lr-4\obj\Debug\Lr-4.csprojResolveAssemblyReference.cache
+E:\2 курс\C#\Lr-4\Lr-4\obj\Debug\Lr-4.csproj.CoreCompileInputs.cache
+E:\2 курс\C#\Lr-4\Lr-4\obj\Debug\Lr-4.exe
+E:\2 курс\C#\Lr-4\Lr-4\obj\Debug\Lr-4.pdb
