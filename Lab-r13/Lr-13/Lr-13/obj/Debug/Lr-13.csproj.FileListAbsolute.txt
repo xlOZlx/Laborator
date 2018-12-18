@@ -1,0 +1,7 @@
+E:\2 курс\C#\Lr-13\Lr-13\bin\Debug\Lr-13.exe.config
+E:\2 курс\C#\Lr-13\Lr-13\bin\Debug\Lr-13.exe
+E:\2 курс\C#\Lr-13\Lr-13\bin\Debug\Lr-13.pdb
+E:\2 курс\C#\Lr-13\Lr-13\obj\Debug\Lr-13.csprojAssemblyReference.cache
+E:\2 курс\C#\Lr-13\Lr-13\obj\Debug\Lr-13.csproj.CoreCompileInputs.cache
+E:\2 курс\C#\Lr-13\Lr-13\obj\Debug\Lr-13.exe
+E:\2 курс\C#\Lr-13\Lr-13\obj\Debug\Lr-13.pdb
