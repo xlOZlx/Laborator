@@ -1,0 +1,235 @@
+1. Что такое LINQ?
+LINQ (Language-Integrated Query) представляет простой и удобный язык запросов к источнику данных. 
+В качестве источника данных может выступать объект, реализующий интерфейс IEnumerable 
+(например, стандартные коллекции, массивы), набор данных DataSet, документ XML. 
+Но вне зависимости от типа источника LINQ позволяет применить ко всем один и тот же подход для выборки данных.
+
+2. В чем разница между отложенными операциями и не отложенными
+операциями LINQ to Object?
+
+Есть два способа выполнения запроса LINQ: отложенное и немедленное выполнение.
+При отложенном выполнении LINQ-выражение не выполняется, пока не будет произведена итерация или перебор по выборке. 
+
+3. Что такое лямбда-выражения?
+
+Лямбда-выражения представляют упрощенную запись анонимных методов. Лямбда-выражения позволяют создать 
+емкие лаконичные методы, которые могут возвращать некоторое значение и которые можно передать в качестве параметров в другие методы.
+
+Ламбда-выражения имеют следующий синтаксис: слева от лямбда-оператора => определяется список параметров, 
+а справа блок выражений, использующий эти параметры: (список_параметров) => выражение.
+
+4. Какие есть группы операции в LINQ to Object? Перечислите
+
+Получение источника данных
+Фильтрация
+Упорядочение
+Группирование
+Соединение
+Выбор (проецирование)
+
+5. Как используется операция Where в LINQ to Object?
+
+Операция Where используется для фильтрации элементов в последовательность. Операция Where имеет два прототипа, которые описаны ниже:
+
+public static IEnumerable<T> Where<T>(
+        this IEnumerable<T> source, 
+        Func<T, bool> predicate);
+
+public static IEnumerable<T> Where<T>(
+       this IEnumerable<T> source, 
+       Func<T, int, bool> predicate);
+
+6. Как используется операция Select ?
+
+Операция Select используется для создания выходной последовательности одного типа 
+элементов из входной последовательности элементов другого типа. Эти типы не обязательно должны совпадать.
+
+public static IEnumerable<S> Select<T, S>( 
+       this IEnumerable<T> source, 
+       Func<T, S> selector);
+
+public static IEnumerable<S> Select<T, S>( 
+     this IEnumerable<T> source, 
+     Func<T, int, S> selector);
+
+7. Как используются операции Take, Skip?
+
+Операции разбиения (partitioning) позволяют вернуть выходную последовательность, которая является подмножеством входной последовательности.
+
+
+public static IEnumerable<T> Take<T>( 
+    this IEnumerable<T> source, 
+    int count);
+
+Операция Skip пропускает указанное количество элементов из входной последовательности, начиная с ее начала, и выводит остальные.
+
+public static IEnumerable<T> Skip<T>( 
+          this IEnumerable<T> source, int count);
+
+8. Как используется операция Concat ?
+
+9. Как используется операция OrderBy?
+
+Операция OrderBy позволяет упорядочить входную последовательность на основе метода keySelector, который возвращает значение ключа 
+для каждого входного элемента. Упорядоченная выходная последовательность IOrderedEnumerable<T> выдается в порядке возрастания на 
+основе значений возвращенных ключей.
+
+public static IOrderedEnumerable<T> OrderBy<T, K>( 
+          this IEnumerable<T> source, 
+          Func<T, K> keySelector)
+    where 
+          К : IComparable<K>;
+
+public static IOrderedEnumerable<T> OrderBy<T, K>( 
+       this IEnumerable<T> source, 
+       Func<T, K> keySelector, 
+       IComparer<K> comparer);
+
+10. Как используется операция Join?
+
+Соединение в LINQ используется для объединения двух разнотипных наборов в один. Для соединения используется 
+оператор join или метод Join(). Как правило, данная операция применяется к двум наборам, которые имеют один общий критерий.
+
+var result = from pl in players
+             join t in teams on pl.Team equals t.Name
+             select new { Name = pl.Name, Team = pl.Team, Country = t.Country };
+
+11. Как используются операции Distinct, Union, Except и Intersect?
+
+Операция Distinct удаляет дублированные элементы из входной последовательности. У операции Distinct есть один прототип, описанный ниже:
+
+public static IEnumerable<T> Distinct<T>( 
+      this IEnumerable<T> source);
+
+Операция Union возвращает объединение множеств из двух исходных последовательностей. У этой операции имеется один прототип, описанный ниже:
+
+public static IEnumerable<T> Union<T>( 
+      this IEnumerable<T> first, 
+      IEnumerable<T> second);
+
+Операция Intersect возвращает пересечение множеств из двух исходных последовательностей. Операция Intersect имеет один прототип, описанный ниже:
+
+public static IEnumerable<T> Intersect<T> (
+    this IEnumerable<T> first, 
+    IEnumerable<T> second);
+
+Операция Except возвращает последовательность, содержащую все элементы первой последовательности, которых нет во 
+второй последовательности. Эта операция имеет один прототип, описанный ниже:
+
+public static IEnumerable<T> Except<T>( 
+       this IEnumerable<T> first, 
+       IEnumerable<T> second);
+
+12. Как используются операции First, Last, Any, All и Contains?
+
+Операция Any возвращает true, если любой из элементов входной последовательности 
+отвечает условию. Эта операция имеет два прототипа, которые описаны ниже:
+
+public static bool Any<T> (
+       this IEnumerable<T> source);
+
+public static bool Any<T> (
+       this IEnumerable<T> source, 
+       Func<T, bool> predicate);
+
+Операция All возвращает true, если каждый элемент входной последовательности отвечает условию. 
+Операция All имеет один прототип, описанный ниже:
+
+public static bool All<T>( 
+      this IEnumerable<T> source, 
+      Func<T, bool> predicate);
+
+Операция Contains возвращает true, если любой элемент входной последовательности соответствует 
+указанному значению. Эта операция имеет два прототипа, которые описаны ниже:
+
+public static bool Contains<T>( 
+    this IEnumerable<T> source, 
+    T value);
+
+public static bool Contains<T>( 
+     this IEnumerable<T> source, 
+     T value, 
+     IEqualityCoinparer<T> comparer);
+
+Операция First возвращает первый элемент последовательности или первый элемент 
+последовательности, соответствующий предикату — в зависимости от использованного прототипа.
+
+public static T First<T>( 
+        this IEnumerable<T> source);
+
+public static T First<T>( 
+   this IEnumerable<T> source, 
+   Func<T, bool> predicate);
+
+Операция Last возвращает последний элемент последовательности или последний элемент, соответствующий предикату — в зависимости 
+от используемого прототипа. Эта операция имеет два прототипа, которые описаны ниже:
+
+public static T Last<T>( 
+       this IEnumerable<T> source);
+
+public static T Last<T>( 
+      this IEnumerable<T> source, 
+      Func<T, bool> predicate) ;
+
+13. Как используются операции Count, Sum, Min и Max, Average?
+
+Операция Count возвращает количество элементов во входной последовательности. Эта операция имеет два прототипа, описанные ниже:
+
+public static int Count<T>( 
+      this IEnumerable<T> source);
+
+public static int Count<T>( 
+      this IEnumerable<T> source, 
+      Func<T, bool> predicate);
+
+Операция Sum возвращает сумму числовых значений, содержащихся в элементах последовательности. Эта операция имеет два прототипа, описанные ниже:
+
+public static Numeric Sum( 
+   this IEnumerable<Numeric> source);
+
+public static Numeric Sum<T>( 
+        this IEnumerable<T> source, 
+        Func<T, Numeric> selector);
+
+Операция Min возвращает минимальное значение входной последовательности. Эта операция имеет четыре прототипа, которые описаны ниже:
+
+public static Numeric Min ( 
+        this IEnumerable<Numeric> source);
+
+public static T Min<T>( 
+      this IEnumerable<T> source);
+
+public static T Min<T>( 
+       this IEnumerable<T> source, 
+       Func<T, Numeric> selector);
+
+public static S Min<T, S>( 
+        this IEnumerable<T> source, 
+        Func<T, S> selector);
+
+Операция Max возвращает максимальное значение из входной последовательности.
+Эта операция имеет четыре прототипа, полностью идентичных прототипам операции Min.
+
+Операция Average возвращает среднее арифметическое числовых значений элементов 
+входной последовательности. Эта операция имеет два прототипа, описанные ниже:
+
+public static Result Average( 
+      this IEnumerable<Numeric> source);
+
+public static Result Average<T>( 
+       this IEnumerable<T> source, 
+       Func<T, Numeric> selector);
+
+14. Что выведет на экран данный код?
+class Test
+{
+	public static void Main()
+	{
+		List<int> list = new List<int>();
+		list.AddRange(new int[] { 3, 1, 4, 8, 10, 4 });
+		List<int> some = list.FindAll(i => (i>=9));
+		foreach (int x in some)
+		Console.Write(x);
+	}
+}
+Ответ: 10.
