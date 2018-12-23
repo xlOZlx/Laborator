@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfAction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Action>
+    <FName>Яр</FName>
+    <LName>Темный</LName>
+    <eadinessToFight>true</eadinessToFight>
+  </Action>
+  <Action>
+    <FName>Триас</FName>
+    <LName>Ас</LName>
+    <eadinessToFight>false</eadinessToFight>
+  </Action>
+  <Action>
+    <FName>Криан</FName>
+    <LName>Коперников</LName>
+    <eadinessToFight>true</eadinessToFight>
+  </Action>
+</ArrayOfAction>
