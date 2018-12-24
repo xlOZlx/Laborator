@@ -1,0 +1,7 @@
+E:\2 курс\C#\Lr-15\Lr-15\bin\Debug\Lr-15.exe.config
+E:\2 курс\C#\Lr-15\Lr-15\bin\Debug\Lr-15.exe
+E:\2 курс\C#\Lr-15\Lr-15\bin\Debug\Lr-15.pdb
+E:\2 курс\C#\Lr-15\Lr-15\obj\Debug\Lr-15.csprojAssemblyReference.cache
+E:\2 курс\C#\Lr-15\Lr-15\obj\Debug\Lr-15.csproj.CoreCompileInputs.cache
+E:\2 курс\C#\Lr-15\Lr-15\obj\Debug\Lr-15.exe
+E:\2 курс\C#\Lr-15\Lr-15\obj\Debug\Lr-15.pdb
